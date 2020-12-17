@@ -4,9 +4,8 @@ import './InputField.css';
 export default class InputField extends React.Component {
   constructor(props) {
     super(props);
-  
     this.state = {
-       value: props.initValue
+      value: props.initValue
     };
     this.handleChange = this.handleChange.bind(this);
   }
@@ -19,11 +18,13 @@ export default class InputField extends React.Component {
 
   render() {
     return (
-      <label>
-        { this.props.label }
-        <input type="text" value={ this.state.value }
-          onChange={ this.handleChange } />
-      </label>
+      <div className="inputField" onChange={ this.props.onChange }>
+        <label>
+          { this.props.label }
+          <input type="text" value={ this.state.value }
+            onChange={ this.handleChange } />
+        </label>
+      </div>
     );
   }
 }

@@ -1,12 +1,14 @@
-label {
-  display: block;
+.inputField {
+  font-family: "Jetbrains Mono", monospace;
+  margin: 20px;
 }
 
 input[type=text] {
     padding:5px; 
     border:2px solid #ccc; 
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    margin-left: 5px;
 }
 
 input[type=text]:focus {

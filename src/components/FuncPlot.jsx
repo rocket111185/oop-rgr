@@ -2,14 +2,24 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 
 export default class FuncPlot extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-       func: props.func,
-       min: props.min,
-       max: props.max,
-       delimeter: props.delimeter
+      func: props.func,
+      min: props.min,
+      max: props.max,
+      delimeter: props.delimeter
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      this.setState({
+        func: this.props.func,
+        min: this.props.min,
+        max: this.props.max,
+        delimeter: this.props.delimeter
+      });
     }
   }
 
@@ -41,6 +51,6 @@ export default class FuncPlot extends React.Component {
           title: 'Графік 3D функції'
         }}
       />
-    )
+    );
   }
 }
