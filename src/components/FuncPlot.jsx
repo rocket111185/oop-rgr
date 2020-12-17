@@ -24,10 +24,14 @@ export default class FuncPlot extends React.Component {
   }
 
   render() {
-    const mn = this.state.min;
-    const dl = this.state.delimeter;
-    const num = Math.ceil((this.state.max - mn + 1) / dl);
-    const norm = value => value * dl + mn;
+    const { min, max, delimeter } = this.state;
+    const [ mn, mx ] = (min < max) ?
+      [ min, max ] :
+      [ max, min ];
+    console.log(mn);
+    console.log(mx);
+    const num = Math.ceil((mx - mn + 1) / delimeter);
+    const norm = value => value * delimeter + mn;
     const axe = Array(num)
       .fill(0)
       .map((_, i) => norm(i));

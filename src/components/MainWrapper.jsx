@@ -83,10 +83,10 @@ export default class MainWrapper extends React.Component {
           <InputField label="Функція"
             initValue={ this.state.func }
             onChange={ this.handleFunc } />
-          <InputField label="Мінімальне значення"
+          <InputField label="Початок проміжку"
             initValue={ this.state.min }
             onChange={ this.handleMin } />
-          <InputField label="Максмальне значення"
+          <InputField label="Кінець проміжку"
             initValue={ this.state.max }
             onChange={ this.handleMax } />
           <InputField label="Ділення"
