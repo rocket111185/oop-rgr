@@ -1,9 +1,12 @@
 
 .inputForm {
+  /* Цей контейнер містиме у собі флекбокси */
   display: flex;
+  /* Ці флексбокси будуть розміщені у ряд (row); в разі потреби
+  елементи будуть розміщені на ряді нижче (wrap)*/
   flex-flow: row wrap;
-  
-  /* Then we define how is distributed the remaining space */
+  /* Місце між флекбоксами буде розподілене рівномірно */
   justify-content: space-around;
+  /* Цей контейнер не є списком */
   list-style: none;
 }
