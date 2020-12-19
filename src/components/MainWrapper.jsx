@@ -145,12 +145,16 @@ export default class MainWrapper extends React.Component {
     setTimeout(() => {
       // Зменшуємо lock
       --this.#lock;
+      // Оголосимо змінну, яка зберігатиме назву поля, на якому виникла помилка
+      let field = '';
       // Якщо lock дорівнює нулю (рівно 4 секунди користувач нічого не вводив)
       if (this.#lock === 0) {
         // Цей шмат коду може викинути помилку, відловлюємо
         try {
           // Цикл проходиться по ключах об'єкту fieldValues
           for (const key in fieldValues) {
+            // Записуємо назву поля (ключа)
+            field = key;
             // newValue (новеЗначення), тому що воно нове відносно стану
             const newValue = fieldValues[key];
             // Якщо ключ -- func (функція)
@@ -182,7 +186,7 @@ export default class MainWrapper extends React.Component {
           this.setState(() => fieldValues);
         } catch (e) {
           // Якщо помилка таки сталась, то показуємо повідомлення
-          alert(key + ': ' + e.message);
+          alert(field + ': ' + e.message);
         }
       }
     }, TIMEOUT);
